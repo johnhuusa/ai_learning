@@ -2,6 +2,10 @@ require('dotenv').config();
 const Anthropic = require('@anthropic-ai/sdk');
 const readline = require('readline');
 
+
+const fs = require('fs');                              // ← NEW
+const notes = fs.readFileSync('notes.txt', 'utf-8');    // ← NEW
+
 const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY,
 });
@@ -45,6 +49,7 @@ async function getResponse() {
     model: 'claude-sonnet-5',
     max_tokens: 300,
     tools: tools,
+    system: `You are a helpful assistant. Use the following notes to answer questions if relevant:\n\n${notes}`,
     messages: conversationHistory,
   });
 

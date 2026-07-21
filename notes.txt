@@ -1,0 +1,4 @@
+My project "ai-learning" was started in Janurary 2026.
+My favorite programming language so far is JavaScript.
+I successfully built a chatbot with memory and a calculator tool.
+My GitHub repo is at github.com/johnhuusa/ai_learning.
